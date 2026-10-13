@@ -1,0 +1,39 @@
+{
+  "experiment_version": "1.0",
+  "n_frames": 120,
+  "n_objects": 6,
+  "dt": 1.0,
+  "dev_seeds": [1, 2, 3],
+  "test_seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],
+  "scenarios": ["separated", "crossing", "dropout", "clutter"],
+  "detector": {
+    "sigma_det": 1.0,
+    "miss_probability": {"separated": 0.02, "crossing": 0.02, "dropout": 0.10, "clutter": 0.10},
+    "clutter_poisson_lambda": 2.0,
+    "occlusion_scenario": "dropout",
+    "occlusion_gt_id": 0,
+    "occlusion_start_frame": 57,
+    "occlusion_end_frame_inclusive": 62
+  },
+  "tracker": {
+    "methods": ["nn_greedy", "nn_hungarian", "kf_greedy", "kf_hungarian"],
+    "max_missed": 8,
+    "nn_gate_radius": 5.0,
+    "kf_gate_mahalanobis_sq": 9.21034,
+    "sigma_a": 0.05,
+    "initial_covariance_diag": [4.0, 4.0, 4.0, 4.0]
+  },
+  "trajectories": {
+    "separated": {
+      "origins": [[10,10], [25,25], [40,40], [55,55], [70,70], [85,85]],
+      "velocities": [[0.1,0.03], [0.1,0.03], [0.1,0.03], [0.1,0.03], [0.1,0.03], [0.1,0.03]]
+    },
+    "crossing": {
+      "origins": [[20,50], [80,50], [15,10], [85,25], [15,75], [85,90]],
+      "velocities": [[0.5,0], [-0.5,0], [0.25,0], [-0.25,0], [0.1,0], [-0.1,0]]
+    }
+  },
+  "region": [0.0, 100.0],
+  "visual_example": {"scenario": "crossing", "seed": 100, "method": "kf_hungarian"},
+  "paths": {"data_dir": "outputs/data", "benchmark_dir": "outputs/benchmark", "figure_dir": "outputs/figures"}
+}

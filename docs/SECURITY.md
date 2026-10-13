@@ -51,7 +51,7 @@ gitleaks git --redact .
 Sin commits, el escaneo de historial no aplica. Una comprobación limpia de un
 índice vacío no certifica archivos sin seguimiento. Antes del primer push se
 debe repetir la auditoría sobre el contenido que realmente se pretenda publicar.
-Elegir la licencia del proyecto y verificar las licencias de fuentes y
+Verificar además la licencia MIT del proyecto y las licencias de fuentes y
 artefactos externos.
 
 ## Reporte privado de vulnerabilidades

@@ -1,1 +1,3 @@
-"""Base del proyecto; todavía no hay algoritmos ni resultados científicos."""
+"""Synthetic multiobject tracking with Kalman filtering and linear assignment."""
+
+__version__ = "0.1.0"

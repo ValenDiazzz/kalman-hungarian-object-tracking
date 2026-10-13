@@ -1,0 +1,30 @@
+# Resolved environment used for the CPU benchmark (Python 3.12.3).
+# Install before pip install --no-deps -e '.[dev]'; no local paths or editable URLs.
+cfgv==3.5.0
+contourpy==1.4.0
+cycler==0.12.1
+distlib==0.4.3
+filelock==4.1.1
+fonttools==4.66.1
+identify==2.6.20
+iniconfig==2.3.1
+kiwisolver==1.5.1
+matplotlib==3.11.2
+nodeenv==1.11.0
+numpy==2.5.4
+packaging==26.3
+pandas==3.0.6
+Pillow==12.3.0
+platformdirs==4.13.0
+pluggy==1.6.0
+pre-commit==4.7.0
+Pygments==2.21.0
+pyparsing==3.3.3
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+python-discovery==1.6.2
+PyYAML==6.0.3
+ruff==0.17.0
+scipy==1.18.1
+six==1.17.0
+virtualenv==21.14.7

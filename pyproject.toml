@@ -4,14 +4,21 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kalman-hungarian-object-tracking"
-version = "0.0.0"
-description = "Base de un proyecto científico y educativo de Python, sin algoritmos implementados."
+version = "0.1.0"
+description = "Seguimiento multiobjeto sintético con Kalman y asignación lineal reproducible."
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+  "numpy>=1.26,<3", "scipy>=1.12,<2", "pandas>=2.2,<4",
+  "matplotlib>=3.8,<4", "Pillow>=10,<13",
+]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<10", "pre-commit>=4,<5"]
+dev = ["pytest>=8,<10", "pre-commit>=4,<5", "ruff>=0.11,<1"]
+
+[project.scripts]
+mot-demo = "kalman_hungarian_object_tracking.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -21,3 +28,17 @@ testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra"
 cache_dir = "outputs/pytest-cache"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+cache-dir = "outputs/ruff-cache"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/kalman_hungarian_object_tracking/plots.py" = ["E402"]
+"tests/test_staged_paths.py" = ["I"]
+"tests/test_gitleaks_hook.py" = ["I"]
+"tests/test_smoke.py" = ["I"]
