@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kalman-hungarian-object-tracking"
+version = "0.0.0"
+description = "Base de un proyecto científico y educativo de Python, sin algoritmos implementados."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pre-commit>=4,<5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+cache_dir = "outputs/pytest-cache"

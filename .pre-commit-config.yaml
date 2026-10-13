@@ -1,0 +1,21 @@
+minimum_pre_commit_version: "4.0.0"
+default_install_hook_types: [pre-commit]
+repos:
+  - repo: local
+    hooks:
+      - id: check-staged-paths
+        name: Reject protected staged paths
+        entry: python3 scripts/check_staged_paths.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      # Resolve the ignored local installation before consulting PATH.
+      - id: gitleaks-system
+        entry: python3 scripts/run_gitleaks.py
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
