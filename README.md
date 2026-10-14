@@ -203,7 +203,17 @@ Todos permanecen ignorados:
 - `outputs/benchmark/post_evidence.md` y `publication/`: evidence_summary,
   verified_metrics, figure_manifest y limitations generados desde resultados.
 
-Para desarrollo y comprobación de repetición:
+La animación educativa `outputs/figures/kalman_hungarian_explained.gif` presenta
+las cuatro etapas de Kalman + Hungarian en formato vertical, con dos objetos
+destacados, covarianzas de posición y asociaciones verificadas de crossing/100.
+Su comando de reproducción y símbolos están en
+[EXPLAINED_ANIMATION.md](docs/EXPLAINED_ANIMATION.md).
+La versión compacta `outputs/figures/kalman_hungarian_explained_v2.gif` dura
+16.6 segundos, conserva ejes fijos y muestra tres instantes del cruce con IDs
+que acompañan a los tracks. Se regenera con el módulo `explained_animation_v2`;
+el comando completo está en la misma documentación.
+
+Para ejecutar desarrollo y comprobar la repetición:
 
 ```bash
 python -m mot_demo.cli benchmark --config configs/benchmark.json --split dev --output-dir outputs/development
